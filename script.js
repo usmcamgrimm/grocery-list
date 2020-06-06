@@ -1,5 +1,19 @@
 let groceryItems = [];
 
+function renderGrocery(grocery) {
+    const list = document.querySelector('.js-grocery-list');
+    list.insertAdjacentHTML('beforeend', `
+        <li class="grocery-item" data-key="${grocery.id}">
+            <input id="${grocery.id}" type="checkbox" />
+            <label for="${grocery.id}" class="tick js-tick"></label>
+            <span>${grocery.text}</span>
+            <button class="delete-grocery js-delete-grocery">
+                <svg><use href="#delete-icon"></use></svg>
+            </button>
+        </li>
+    `);
+}
+
 function addGrocery(text) {
     const grocery = {
         text,
@@ -8,7 +22,7 @@ function addGrocery(text) {
     };
 
     groceryItems.push(grocery);
-    console.log(groceryItems);
+    renderGrocery(grocery);
 }
 
 const form = document.querySelector('.js-form');
