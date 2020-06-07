@@ -37,6 +37,12 @@ function toggleDone(key) {
     }
 }
 
+function deleteGrocery(key) {
+    groceryItems = groceryItems.filter(item => item.id !== Number(key));
+    const item = document.querySelector(`[data-key='${key}']`);
+    item.remove();
+}
+
 const form = document.querySelector('.js-form');
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -55,5 +61,10 @@ list.addEventListener('click', e => {
     if (e.target.classList.contains('js-tick')) {
         const itemKey = e.target.parentElement.dataset.key;
         toggleDone(itemKey);
+    }
+
+    if (e.target.classList.contains('js-delete-grocery')) {
+        const itemKey = event.target.parentElement.dataset.key;
+        deleteGrocery(itemKey);
     }
 });
