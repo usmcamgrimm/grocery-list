@@ -41,6 +41,9 @@ function deleteGrocery(key) {
     groceryItems = groceryItems.filter(item => item.id !== Number(key));
     const item = document.querySelector(`[data-key='${key}']`);
     item.remove();
+
+    const list = document.querySelector('.js-grocery-list');
+    if (groceryItems.length === 0) list.innerHTML = '';
 }
 
 const form = document.querySelector('.js-form');
