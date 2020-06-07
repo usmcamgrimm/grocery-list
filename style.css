@@ -132,10 +132,10 @@ input[type="text"] {
 }
 
 .emptyList {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .checklist-icon {
@@ -147,4 +147,12 @@ input[type="text"] {
 .emptyList-title,
 .emptyList-description {
     margin-bottom: 20px;
+}
+
+.grocery-list:empty {
+    display: none;
+}
+
+.grocery-list:empty+.emptyList {
+    display: flex;
 }
