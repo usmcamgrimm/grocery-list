@@ -37,3 +37,11 @@ form.addEventListener('submit', e => {
         input.focus();
     }
 });
+
+const list = document.querySelector('.js-grocery-list');
+list.addEventListener('click', e => {
+    if (e.target.classList.contains('js-tick')) {
+        const itemKey = e.target.aprentElement.dataset.key;
+        toggleDone(itemKey);
+    }
+});
