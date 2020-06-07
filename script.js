@@ -25,6 +25,18 @@ function addGrocery(text) {
     renderGrocery(grocery);
 }
 
+function toggleDone(key) {
+    const index = groceryItems.findIndex(item => item.id === Number(key));
+    groceryItems[index].checked = !groceryItems[index].checked;
+
+    const item = document.querySelector(`[data-key='${key}']`);
+    if (groceryItems[index].checked) {
+        item.classList.add('done');
+    } else {
+        item.classList.remove('done');
+    }
+}
+
 const form = document.querySelector('.js-form');
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -41,7 +53,7 @@ form.addEventListener('submit', e => {
 const list = document.querySelector('.js-grocery-list');
 list.addEventListener('click', e => {
     if (e.target.classList.contains('js-tick')) {
-        const itemKey = e.target.aprentElement.dataset.key;
+        const itemKey = e.target.parentElement.dataset.key;
         toggleDone(itemKey);
     }
 });
