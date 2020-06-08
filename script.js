@@ -1,4 +1,7 @@
-let groceryItems = [];
+let groceryItems = localStorage.getItem('groceries') ? JSON.parse(localStorage.getItem('groceries')) : [];
+
+localStorage.setItem('groceries', JSON.stringify(groceryItems));
+const data = JSON.parse(localStorage.getItem('groceries'));
 
 function renderGrocery(grocery) {
     const list = document.querySelector('.js-grocery-list');
@@ -23,6 +26,7 @@ function addGrocery(text) {
 
     groceryItems.push(grocery);
     renderGrocery(grocery);
+    localStorage.setItem('groceries', JSON.stringify(groceryItems))
 }
 
 function toggleDone(key) {
@@ -67,6 +71,7 @@ list.addEventListener('click', e => {
     }
 
     if (e.target.classList.contains('js-delete-grocery')) {
+        localStorage.clear();
         const itemKey = event.target.parentElement.dataset.key;
         deleteGrocery(itemKey);
     }
