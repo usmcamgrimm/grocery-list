@@ -1,3 +1,41 @@
+function groceryList() {
+    let list = document.querySelector('#groceryList');
+    let formm = document.querySelector('form');
+    let groceries = document.querySelector('#groceries');
+
+    formm.addEventListener('submit', e => {
+        e.preventDefault();
+        list.innerHTML += `'<li>'${groceries.value}'</li>'`;
+        store();
+        groceries.value = '';
+    }, false)
+
+    list.addEventListener('click', e => {
+        let t = e.target;
+        if(t.classList.contains('checked')) {
+            t.parentNode.removeChild(t);
+        } else {
+            t.classList.add('checked');
+        }
+        store();
+    }, false)
+
+    function store() {
+        window.localStorage.myGroceries = list.innerHTML;
+    }
+
+    function getValues() {
+        let storedValues = window.localStorage.myGroceries;
+        if(!storedValues) {
+            list.innerHTML = '';
+        } else {
+            list.innerHTML = storedValues;
+        }
+    }
+    getValues;
+}
+
+/*
 let groceryItems = localStorage.getItem('groceries') ? JSON.parse(localStorage.getItem('groceries')) : [];
 
 localStorage.setItem('groceries', JSON.stringify(groceryItems));
@@ -76,3 +114,4 @@ list.addEventListener('click', e => {
         deleteGrocery(itemKey);
     }
 });
+*/
