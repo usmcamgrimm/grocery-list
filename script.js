@@ -67,11 +67,11 @@ const list = document.querySelector('.js-grocery-list');
 list.addEventListener('click', e => {
     if (e.target.classList.contains('js-tick')) {
         const itemKey = e.target.parentElement.dataset.key;
+        localStorage.removeItem(`${key}`);
         toggleDone(itemKey);
     }
 
     if (e.target.classList.contains('js-delete-grocery')) {
-        localStorage.clear();
         const itemKey = event.target.parentElement.dataset.key;
         deleteGrocery(itemKey);
     }
