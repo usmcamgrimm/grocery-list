@@ -11,13 +11,17 @@
 
 <body>
 
-    <div class="container">
+    <div id="wrapper">
         <h1>Grocery List</h1>
-
-        <form action="#">
-            <input type="text" name="groceries" id="groceries" placeholder="add grocery items..." />
+        <form id="groceryForm" class="clearfix">
+            <input type="text" id="groceryAdd" placeholder="Add an item" required />
+            <input type="submit" value="Add" />
         </form>
-        <ul id="groceryList"></ul>
+        <div id="listDelete">
+            <input type="button" value="Clear List" class="delBtn" id="clearList" />
+            <input type="button" value="Clear Checked" class="delBtn" id="clearChecked" />
+        </div>
+        <div id="groceries"></div>
     </div>
 
     <script src="./script.js"></script>
