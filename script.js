@@ -1,6 +1,6 @@
 let grocery = {
     data: [],
-    load: function() {
+    load: function () {
         //load list from local storage
         if (localStorage.list == undefined) {
             localStorage.list = "[]";
@@ -19,10 +19,11 @@ let grocery = {
         container.innerHTML = "";
 
         if (grocery.data.length > 0) {
-            let row = "", e = "";
+            let row = "",
+                e = "";
             for (var key in grocery.data) {
                 row = document.createElement("div");
-                row.classList.add("clearfix");
+                row.classList.add("list");
                 row.dataset.id = key;
 
                 e = document.createElement("div");
@@ -39,7 +40,7 @@ let grocery = {
                 e = document.createElement("input");
                 e.setAttribute("type", "button");
                 e.value = "\u2716";
-                e.classList.add("bdel");
+                e.classList.add("del");
                 e.addEventListener("click", function () {
                     grocery.status(this, 1);
                 });
@@ -48,9 +49,9 @@ let grocery = {
                 e = document.createElement("input");
                 e.setAttribute("type", "button");
                 e.value = "\u2714";
-                e.classList.add("bchecked");
+                e.classList.add("comp");
                 e.addEventListener("click", function () {
-                grocery.status(this, 1);
+                    grocery.status(this, 1);
                 });
                 row.appendChild(e);
 
@@ -64,7 +65,7 @@ let grocery = {
         grocery.data.push([
             document.getElementById("groceryAdd").value, 0
         ]);
-        document.getElementById("groceryAdd").value="";
+        document.getElementById("groceryAdd").value = "";
         grocery.save();
     },
 
@@ -80,9 +81,8 @@ let grocery = {
             if (type == 0) {
                 grocery.data = [];
                 grocery.save();
-            }
-            else {
-                grocery.data = grocery.data.filter(row => row[1]==0);
+            } else {
+                grocery.data = grocery.data.filter(row => row[1] == 0);
                 grocery.save();
             }
         }

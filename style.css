@@ -28,7 +28,8 @@ body {
     padding: 10px 8px;
 }
 
-#wrapper input[type=button], #wrapper input[type=submit] {
+#wrapper input[type=button],
+#wrapper input[type=submit] {
     padding: 8px 5px;
     color: #030303;
     background: #fefefe;
@@ -36,11 +37,11 @@ body {
     cursor: pointer;
 }
 
-#wrapper .clearfix {
+#wrapper .list {
     overflow: auto;
 }
 
-#wrapper .clearfix:after {
+#wrapper .list:after {
     content: "";
     display: table;
     clear: both;
@@ -80,6 +81,7 @@ h1 {
     border-radius: 5px;
     color: #fefefe;
 }
+
 #listDelete {
     display: flex;
     justify-content: flex-start;
@@ -91,11 +93,13 @@ h1 {
     box-shadow: 1px 2px 5px rgba(3, 3, 3, 0.4);
     margin-right: 1rem;
 }
-#groceries .clearfix {
+
+#groceries .list {
     margin-top: 8px;
 }
 
-#groceries .clearfix div, #groceries .clearfix input {
+#groceries .list div,
+#groceries .list input {
     box-sizing: border-box;
     float: left;
     display: block;
@@ -117,11 +121,6 @@ h1 {
     background: #DCFFD7;
 }
 
-#groceries .clearfix input {
+#groceries .list input {
     width: 10%;
-}
-
-#groceries input.bdone {
-    background: #4AA53D;
-    border: 2px solid #4AA53D;
 }
