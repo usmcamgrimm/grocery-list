@@ -124,3 +124,12 @@ h1 {
 #groceries .list input {
     width: 10%;
 }
+
+@media screen and (max-width: 599px) {
+    #wrapper {
+        max-width: 85%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
