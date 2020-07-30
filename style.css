@@ -1,19 +1,16 @@
-html,
-body,
-input {
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-html,
-body {
+* {
     padding: 0;
     margin: 0;
 }
 
+html,
+body {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.2;
     background: url('./purple-bokeh.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -37,14 +34,13 @@ body {
     cursor: pointer;
 }
 
-#wrapper .list {
+#wrapper .formList {
     overflow: auto;
 }
 
-#wrapper .list:after {
+#wrapper .formList:after {
     content: "";
     display: table;
-    clear: both;
 }
 
 #wrapper {
@@ -53,7 +49,7 @@ body {
     padding: 20px;
     margin: 0 auto;
     margin-top: 2rem;
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow: 0 4px 12px #030303;
 }
 
@@ -61,7 +57,7 @@ h1 {
     font-family: Roboto;
     text-align: center;
     margin-bottom: 20px;
-    font-size: 3rem;
+    font-size: 2.7rem;
     color: #800080;
 }
 
@@ -94,20 +90,21 @@ h1 {
     margin-right: 1rem;
 }
 
-#groceries .list {
-    margin-top: 8px;
+#groceries .formList {
+    margin-top: 1rem;
 }
 
-#groceries .list div,
-#groceries .list input {
+#groceries .formList div,
+#groceries .formList input {
     box-sizing: border-box;
     float: left;
     display: block;
 }
 
 #groceries .item {
-    border: 1px solid #ddd;
-    background: #fff;
+    border: 1px solid rgba(3, 3, 3, 0.2);
+    border-radius: 3px;
+    background: #fefefe;
     width: 80%;
     padding: 10px;
 }
@@ -121,7 +118,7 @@ h1 {
     background: #DCFFD7;
 }
 
-#groceries .list input {
+#groceries .formList input {
     width: 10%;
 }
 
@@ -129,6 +126,7 @@ h1 {
     #wrapper {
         max-width: 85%;
     }
+
     h1 {
         font-size: 2rem;
     }
