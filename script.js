@@ -11,6 +11,20 @@ let grocery = {
         grocery.data = JSON.parse(localStorage.list);
         grocery.list();
     },
+    
+    list: function() {
+        let container = document.getElementById("groceries");
+        container.innerHTML = "";
 
+        if (grocery.data.length > 0) {
+            let row = "", e ="";
+            for (var key in grocery.data) {
+                row = document.createElement("div");
+                row.classList.add("formList");
+                row.dataset.id = key;
 
+                //Item text
+            }
+        }
+    }
 }
