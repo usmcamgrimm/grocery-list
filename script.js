@@ -85,17 +85,13 @@ let grocery = {
     },
 
     del: function (type) {
-        //delete items from list
-        if (confirm("Delete items?")) {
-            //delete ALL
-            if (type == 0) {
-                grocery.data = [];
-                grocery.save();
-            }
-            //delete all completed
-            grocery.data = grocery.data.filter(row => row[1] == 0);
+        if (type == 0) {
+            grocery.data = [];
             grocery.save();
         }
+        //delete all completed
+        grocery.data = grocery.data.filter(row => row[1] == 0);
+        grocery.save();
     }
 };
 
