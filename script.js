@@ -37,7 +37,7 @@ let grocery = {
                     e.classList.add("done");
                 }
                 if (grocery.data[key][1] == 2) {
-                    e.classList.add("done");
+                    e.classList.add("cx");
                 }
                 e.innerHTML = grocery.data[key][0];
                 row.appendChild(e);
