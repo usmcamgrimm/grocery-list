@@ -1,3 +1,3 @@
 This is a simple grocery list app I made for my wife.
 
-Followed a tutorial for this, the purpose of which was to show how to incorporate local storage.
+The beginnings of this app were from a tutorial, the basis of which was to learn how to utilize local storage.
