@@ -9,9 +9,7 @@ body {
 }
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    background: url('./purple-bokeh.png');
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #18181a;
 }
 #wrapper input {
     box-sizing: border-box;
